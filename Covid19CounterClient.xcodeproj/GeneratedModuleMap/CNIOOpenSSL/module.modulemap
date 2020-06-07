@@ -1,0 +1,4 @@
+module CNIOOpenSSL {
+    umbrella "/Users/andreaslydemann/Desktop/Covid19CounterClient/.build/checkouts/swift-nio-ssl/Sources/CNIOOpenSSL/include"
+    export *
+}
