@@ -5,11 +5,19 @@ import Vapor
 ///
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#routesswift)
 public func routes(_ router: Router) throws {
+    
     router.get { req -> Future<View> in
-        let denmark = Country(id: 45, name: "Denmark")
-        let sweden = Country(id: 46, name: "Sweden")
-        let norway = Country(id: 47, name: "Norway")
+        struct PageData: Content, Codable {
+            var countries: [Country]
+        }
 
-        return try req.view().render("country-selector", ["countries": [denmark, sweden, norway]])
+        let client = try req.make(Client.self)
+        let response = client.get("http://localhost:9090/countries")
+        
+        let exampleData = response.flatMap(to: [Country].self) { response in
+            return try response.content.decode([Country].self)
+        }.map { PageData(countries: $0) }
+        
+        return try req.view().render("country-selector", exampleData)
     }
 }

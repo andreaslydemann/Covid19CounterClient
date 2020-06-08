@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-struct Country: Content {
-    var id: Int
-    var name: String
+struct Country: Codable {
+    let id: Int
+    let name: String
 }
