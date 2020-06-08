@@ -4734,7 +4734,6 @@
 		OBJ_730 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_731 /* cloud.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = cloud.yml; sourceTree = "<group>"; };
 		OBJ_732 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_733 /* circle.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = circle.yml; sourceTree = "<group>"; };
 		OBJ_75 /* ApplicationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationResponder.swift; sourceTree = "<group>"; };
 		OBJ_76 /* BasicResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponder.swift; sourceTree = "<group>"; };
 		OBJ_77 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
@@ -6782,7 +6781,7 @@
 			path = .build/checkouts/core/Sources/Async;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -6795,9 +6794,7 @@
 				OBJ_730 /* LICENSE */,
 				OBJ_731 /* cloud.yml */,
 				OBJ_732 /* README.md */,
-				OBJ_733 /* circle.yml */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_511 /* Bits */ = {
@@ -8839,7 +8836,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_685 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
