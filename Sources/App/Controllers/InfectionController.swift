@@ -1,6 +1,12 @@
 import Vapor
 
 struct InfectionController: RouteCollection {
+    let apiBaseUrl: String
+    
+    init(apiBaseUrl: String) {
+        self.apiBaseUrl = apiBaseUrl
+    }
+    
     func boot(router: Router) throws {
         let countriesRouter = router.grouped("infections")
         
@@ -19,7 +25,7 @@ private extension InfectionController {
         let countryCode = try req.parameters.next(Int.self)
         
         let client = try req.make(Client.self)
-        let response = client.get("http://localhost:9090/infections/\(countryCode)")
+        let response = client.get("\(apiBaseUrl)/infections/\(countryCode)")
         
         let pageData = response.flatMap(to: Infection.self) { response in
             return try response.content.decode(Infection.self)
@@ -35,7 +41,7 @@ private extension InfectionController {
         
         let client = try req.make(Client.self)
         
-        let response = client.post("http://localhost:9090/infections/increment") { post in
+        let response = client.post("\(apiBaseUrl)/infections/increment") { post in
             try post.content.encode(modifyRequest)
         }
         
@@ -51,7 +57,7 @@ private extension InfectionController {
         
         let client = try req.make(Client.self)
         
-        let response = client.post("http://localhost:9090/infections/decrement") { post in
+        let response = client.post("\(apiBaseUrl)/infections/decrement") { post in
             try post.content.encode(modifyRequest)
         }
         

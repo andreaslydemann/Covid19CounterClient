@@ -1,6 +1,12 @@
 import Vapor
 
 struct CountryController: RouteCollection {
+    let apiBaseUrl: String
+    
+    init(apiBaseUrl: String) {
+        self.apiBaseUrl = apiBaseUrl
+    }
+    
     func boot(router: Router) throws {
         let countriesRouter = router.grouped("")
         
@@ -17,7 +23,7 @@ private extension CountryController {
         }
 
         let client = try req.make(Client.self)
-        let response = client.get("http://localhost:9090/countries")
+        let response = client.get("\(apiBaseUrl)/countries")
         
         let pageData = response.flatMap(to: [Country].self) { response in
             return try response.content.decode([Country].self)
@@ -29,7 +35,7 @@ private extension CountryController {
     func createCountry(_ req: Request, country: CreateCountryRequest) throws -> Future<Response> {
         let client = try req.make(Client.self)
         
-        let response = client.post("http://localhost:9090/countries") { post in
+        let response = client.post("\(apiBaseUrl)/countries") { post in
             try post.content.encode(country)
         }
         
@@ -44,7 +50,7 @@ private extension CountryController {
         
         let client = try req.make(Client.self)
         
-        let response = client.delete("http://localhost:9090/countries/\(countryCode)") { delete in
+        let response = client.delete("\(apiBaseUrl)/countries/\(countryCode)") { delete in
             try delete.content.encode(deleteRequest)
         }
         
