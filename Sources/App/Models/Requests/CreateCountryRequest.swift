@@ -1,7 +1,7 @@
 import Foundation
 import Vapor
 
-struct CountryRequest: Content, Codable {
+struct CreateCountryRequest: Content, Codable {
     let countryCode: Int
     let name: String
 }

@@ -5,6 +5,9 @@
 <div class="btn-group">
 #for(country in countries) {
 <a href="infections/#(country.id)" class="btn btn-primary">#(country.name)</a>
+<form method="post" action="/delete/#(country.id)">
+    <input type="submit" value="Delete" />
+</form>
 }
 </div>
 

@@ -21,7 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		8EAADB90248F80CF00A8F2B0 /* CountryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAADB8F248F80CF00A8F2B0 /* CountryRequest.swift */; };
+		8E707FFF248F87F000588F12 /* Infection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E707FFE248F87F000588F12 /* Infection.swift */; };
+		8E708001248F8C1800588F12 /* ModifyInfectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708000248F8C1800588F12 /* ModifyInfectionRequest.swift */; };
+		8E708003248F906B00588F12 /* DeleteCountryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E708002248F906B00588F12 /* DeleteCountryRequest.swift */; };
+		8EAADB90248F80CF00A8F2B0 /* CreateCountryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAADB8F248F80CF00A8F2B0 /* CreateCountryRequest.swift */; };
 		OBJ_1000 /* CNIOSHA1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "swift-nio::CNIOSHA1::Product" /* CNIOSHA1.framework */; };
 		OBJ_1001 /* NIOPriorityQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "swift-nio::NIOPriorityQueue::Product" /* NIOPriorityQueue.framework */; };
 		OBJ_1002 /* NIOConcurrencyHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "swift-nio::NIOConcurrencyHelpers::Product" /* NIOConcurrencyHelpers.framework */; };
@@ -4205,7 +4208,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8EAADB8F248F80CF00A8F2B0 /* CountryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRequest.swift; sourceTree = "<group>"; };
+		8E707FFE248F87F000588F12 /* Infection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infection.swift; sourceTree = "<group>"; };
+		8E708000248F8C1800588F12 /* ModifyInfectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfectionRequest.swift; sourceTree = "<group>"; };
+		8E708002248F906B00588F12 /* DeleteCountryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCountryRequest.swift; sourceTree = "<group>"; };
+		8EAADB8F248F80CF00A8F2B0 /* CreateCountryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCountryRequest.swift; sourceTree = "<group>"; };
 		"Console::Command::Product" /* Command.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Command.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Console::Product" /* Console.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Console.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Logging::Product" /* Logging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5549,7 +5555,9 @@
 		8EAADB8E248F809900A8F2B0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				8EAADB8F248F80CF00A8F2B0 /* CountryRequest.swift */,
+				8EAADB8F248F80CF00A8F2B0 /* CreateCountryRequest.swift */,
+				8E708002248F906B00588F12 /* DeleteCountryRequest.swift */,
+				8E708000248F8C1800588F12 /* ModifyInfectionRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -5558,6 +5566,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* Country.swift */,
+				8E707FFE248F87F000588F12 /* Infection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -6808,7 +6817,7 @@
 			path = .build/checkouts/core/Sources/Async;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -6822,7 +6831,6 @@
 				OBJ_732 /* cloud.yml */,
 				OBJ_733 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_512 /* Bits */ = {
@@ -8864,7 +8872,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_686 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -9804,11 +9812,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				8E708001248F8C1800588F12 /* ModifyInfectionRequest.swift in Sources */,
 				OBJ_739 /* Country.swift in Sources */,
+				8E707FFF248F87F000588F12 /* Infection.swift in Sources */,
 				OBJ_740 /* boot.swift in Sources */,
 				OBJ_741 /* configure.swift in Sources */,
+				8E708003248F906B00588F12 /* DeleteCountryRequest.swift in Sources */,
 				OBJ_742 /* routes.swift in Sources */,
-				8EAADB90248F80CF00A8F2B0 /* CountryRequest.swift in Sources */,
+				8EAADB90248F80CF00A8F2B0 /* CreateCountryRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
