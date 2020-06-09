@@ -20,4 +20,20 @@ public func routes(_ router: Router) throws {
         
         return try req.view().render("country-selector", exampleData)
     }
+    
+    router.post(CountryRequest.self, at: "add") { req, country -> Future<Response> in
+        let client = try req.make(Client.self)
+        
+        let response = client.post("http://localhost:9090/countries") { post in
+            try post.content.encode(country)
+        }
+        
+        return response.map(to: Response.self) { res in
+            return req.redirect(to: "/")
+        }
+    }
+    
+    router.get("infections", Int.parameter) { req -> Future<View> in
+        return try req.view().render("infection-counter")
+    }
 }

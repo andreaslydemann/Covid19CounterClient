@@ -1,4 +1,4 @@
 module CCryptoOpenSSL {
-    umbrella "/Users/andreaslydemann/Desktop/Covid19CounterClient/.build/checkouts/crypto/Sources/CCryptoOpenSSL/include"
+    umbrella "/Users/andreaslydemann/Documents/Repos/Covid19CounterClient/.build/checkouts/crypto/Sources/CCryptoOpenSSL/include"
     export *
 }
