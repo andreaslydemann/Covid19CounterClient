@@ -31,7 +31,7 @@ private extension InfectionController {
             return try response.content.decode(Infection.self)
         }.map { PageData(infection: $0) }
         
-        return try req.view().render("infection-counter", pageData)
+        return try req.view().render("infections", pageData)
     }
     
     func increment(_ req: Request) throws -> Future<Response> {

@@ -1,0 +1,20 @@
+#set("content") {
+  <h1>Select a country</h1>
+  <div class="btn-group">
+  #for(country in countries) {
+    <a href="infections/#(country.id)" class="btn btn-primary">#(country.name)</a>
+    <form method="post" action="/delete/#(country.id)">
+      <input class="btn btn-danger" type="submit" value="Delete" />
+    </form>
+  }
+  </div>
+
+  <h2>Add new country</h2>
+  <form method="post" action="/add">
+    <p>Name: <input type="text" name="name" /></p>
+    <p>Country code: <input type="number" name="countryCode" /></p>
+    <input class="btn btn-primary" type="submit" value="Add" />
+  </form>
+}
+
+#embed("base")

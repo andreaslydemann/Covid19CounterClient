@@ -1,0 +1,14 @@
+#set("content") {
+  <h1>Infections</h1>
+  <p>Count: #(infection.count)</p>
+
+  <form method="post" action="#(infection.countryCode)/increment">
+    <input class="btn btn-primary" type="submit" value="Increment" />
+  </form>
+  
+  <form method="post" action="#(infection.countryCode)/decrement">
+    <input class="btn btn-primary" type="submit" value="Decrement" />
+  </form>
+}
+
+#embed("base")

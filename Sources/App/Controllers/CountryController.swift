@@ -29,7 +29,7 @@ private extension CountryController {
             return try response.content.decode([Country].self)
         }.map { PageData(countries: $0) }
         
-        return try req.view().render("country-selector", pageData)
+        return try req.view().render("countries", pageData)
     }
     
     func createCountry(_ req: Request, country: CreateCountryRequest) throws -> Future<Response> {
