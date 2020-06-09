@@ -1,18 +1,41 @@
 #set("content") {
-  <h1>Select a country</h1>
-  <div class="btn-group">
-  #for(country in countries) {
-    <a href="infections/#(country.id)" class="btn btn-primary">#(country.name)</a>
-    <form method="post" action="/delete/#(country.id)">
-      <input class="btn btn-danger" type="submit" value="Delete" />
-    </form>
+  <h1 class="my-4">Countries</h1>
+  #if(count(countries) > 0) {
+    #for(country in countries) {
+      <div class="row">
+        <div class="form-group col-9">
+          <label for="countryCode">#(country.name)</label>
+        </div>
+        
+        <div class="form-group col">
+          <a href="infections/#(country.id)" class="btn btn-primary">Infections</a>
+        </div>
+        
+        <div class="form-group col">
+          <form method="post" action="/delete/#(country.id)">
+            <input class="btn btn-danger" type="submit" value="Delete" />
+          </form>
+        </div>
+      </div>
+    }
+  } else {
+    <label for="countryCode">Sorry, no countries have been added.</label>
   }
-  </div>
-
-  <h2>Add new country</h2>
+  
+  <hr/>
   <form method="post" action="/add">
-    <p>Name: <input type="text" name="name" /></p>
-    <p>Country code: <input type="number" name="countryCode" /></p>
+    <div class="row">
+      <div class="form-group col">
+        <label for="countryName">Country Name</label>
+        <input id="countryName" class="form-control" type="text" name="name" placeholder="Enter country name" />
+      </div>
+      
+      <div class="form-group col">
+        <label for="countryCode">Country Code</label>
+        <input id="countryCode" class="form-control" type="number" name="countryCode" placeholder="Enter country code" />
+      </div>
+    </div>
+    
     <input class="btn btn-primary" type="submit" value="Add" />
   </form>
 }
